@@ -1,0 +1,25 @@
+- hosts: all
+  vars_prompt:
+     - name: mail_id
+       prompt: "Enter your email id "
+       private: no
+     - name: password
+       prompt: "Enter your password"
+     - name: recipients
+       prompt: "Enter recipients"
+       private: no
+     - name: subject
+       prompt: "Enter Subject"
+       private: no
+     - name: body
+       prompt: "Enter body"
+       private: no
+  tasks:
+     - mail:
+          host: "smtp.gmail.com"
+          port: 587
+          username: "{{mail_id}} "
+          password: "{{password}} "
+          to: "{{recipients}} " 
+          subject: "{{subject}} "
+          body: "{{body}} "

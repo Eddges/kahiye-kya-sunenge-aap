@@ -1,0 +1,9 @@
+- hosts: all
+  tasks: 
+     - copy:
+         src: "/root/jdk-8u171-linux-x64.rpm"
+         dest: "/root"
+
+     - package:
+         name: "/root/jdk-8u171-linux-x64.rpm"
+         state: present

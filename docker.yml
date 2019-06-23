@@ -1,0 +1,35 @@
+- hosts: all	
+  vars_prompt:
+     - name: "name_os"
+       prompt: "Enter name of OS "
+       private: no
+     - name: "image"
+       prompt: "Enter name of image(centos/ubuntu) "
+       private: no
+  tasks:
+     - pip:
+          name: "docker-py"
+     - package: 
+          name: "docker-ce"
+          state: present
+     - service:
+          name: "docker"
+          state: "restarted"
+          enabled: True
+     - copy: 
+          src: "/root/Desktop/rhel7_5_software_extras/{{image}}-latest.tar"
+          dest: "/root/{{image}}-latest.tar"
+     - docker_image:
+          name: "{{image}}"
+          load_path: "/root/{{image}}-latest.tar"
+     - docker_container:
+          name: "{{name_os}}"
+          image: "{{image}}"
+          state: stopped
+          restart: yes
+          interactive: True
+          tty: True
+          volumes: 
+              - "/root/Desktop/iso_copy"
+  environment:
+     - PYTHONPATH: /usr/local/lib/python3.6/site-packages

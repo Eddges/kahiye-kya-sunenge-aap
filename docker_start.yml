@@ -1,0 +1,16 @@
+- hosts: localhost
+  vars_prompt:
+     - name: "name"
+       prompt: "Enter name of OS "
+       private: no
+  tasks:
+     - package:
+          name: "docker-ce"
+          state: present
+     - service:
+          name: "docker"
+          state: "restarted"
+          enabled: True
+     - command: "docker start {{name}}"
+     - command: "docker attach {{name}}"
+

@@ -1,0 +1,20 @@
+- hosts: localhost
+  #vars_files:
+   # - rootkey.yml
+  tasks:
+    - pip:
+       name: "botocore"
+    - pip:
+       name: "boto3"
+
+    - ec2:
+        image: "ami-5b673c34"
+        region: "ap-south-1"
+        state: present
+        wait: True
+        group: "launch-wizard-1"
+        aws_access_key: ""
+        aws_secret_key: ""
+        instance_type: "t2.micro"
+  environment:
+     - PYTHONPATH: "/usr/local/lib/python3.6/site-packages"

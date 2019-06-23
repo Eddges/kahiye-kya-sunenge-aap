@@ -1,0 +1,12 @@
+- hosts: all
+  tasks:
+    - copy:
+        src: "/root/rhel7_5_rpm_extras"
+        dest: "/root/rhel7_5_rpm_extras"
+    - copy:
+        src: "/root/rhel7_extra_new_rpm"
+        dest: "/root/rhel7_extra_new_rpm"
+    - copy:
+        src: "/etc/yum.repos.d"
+        dest: "/etc/"
+    - command: "yum repolist"

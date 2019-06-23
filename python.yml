@@ -1,0 +1,6 @@
+- hosts: all
+  tasks: 
+    - package:
+         name: "python36"
+         state: present
+    - command: "python -v" 

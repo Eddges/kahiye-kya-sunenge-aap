@@ -1,0 +1,11 @@
+- hosts: all 
+  vars_prompt:
+    - name: y
+      prompt: Enter username   
+      private: no
+    - name: p
+      prompt: Enter password 
+  tasks: 
+    - user:
+         name: "{{ y }}"
+         password: "{{ p }}"

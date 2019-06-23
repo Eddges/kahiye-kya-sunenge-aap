@@ -1,0 +1,8 @@
+- hosts: all
+  vars_prompt:
+    - prompt: "Enter the name of library you want to install "
+      name: lib
+      private: no
+  tasks: 
+    - pip:
+        name: "{{lib}}"

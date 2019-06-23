@@ -1,0 +1,24 @@
+- hosts: localhost
+  connection: local
+  vars_prompt:
+    - name: access_key
+      prompt: "Enter your access key"
+      private: no
+    - name: secret_key
+      prompt: "Enter your secret key"
+    - name: bucketname
+      prompt: "Enter your bucket name"
+      private: no
+  tasks:
+   - pip:
+       name: "botocore"
+   - pip:
+       name: "boto3"
+   - name: Create a bucket
+     aws_s3:
+       aws_access_key: "{{access_key}}"
+       aws_secret_key: "{{secret_key}}"
+       bucket: "{{bucketname}}"
+       mode: create
+  environment:  
+     - PYTHONPATH: "/usr/local/lib/python3.6/site-packages"

@@ -1,0 +1,8 @@
+- hosts: all
+  tasks:
+    - copy:
+        src: "/root/Desktop/hadoop-1.2.1-1.x86_64.rpm"
+        dest: "/root/"
+    - package:
+        name: "/root/hadoop-1.2.1-1.x86_64.rpm"
+        state: present
