@@ -1,0 +1,25 @@
+- hosts: localhost
+  tasks:
+        - package: 
+                name: "{{ packages }}"
+                state: present
+          vars:
+                packages:
+                        - kubelet
+                        - kubeadm
+                        - kubectl
+        - service:
+                name: "kubelet"
+                state: restarted
+                enabled: yes
+        - mount:
+                name: "{{ item }}"
+                fstype: swap
+                state: absent
+          with_items:
+                - swap
+                - none
+
+        - command: "swapoff -a"
+          when: ansible_swaptotal_mb > 0 
+        - command: "kubeadm init --apiserver-advertise-address=192.168.43.51 --kubernetes-version=v1.13.3"
