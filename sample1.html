@@ -1,0 +1,927 @@
+
+<!-- loading line 351-724 -->
+<!-- loading line 198 -->
+<!-- pop up msg to start the voice -->
+
+
+<style>
+  html {
+  /*background: linear-gradient(135deg, #07275b 0%, #717782 100%);*/
+  /*background: linear-gradient(135deg, #2B7594 0%, #655900 100%);*/
+  fixed;
+  overflow: hidden;
+  font-family: 'Orbitron', sans-serif;
+}
+
+li {
+    list-style-type: none;
+}
+
+/*.slider-box {
+  float: right;
+  margin: 10px 20px;
+  position: relative;
+  z-index: 1000;
+}*/
+
+#range {
+  margin-top: 5px;
+  color: #eee;
+  font-size: 10pt;
+  margin-left: 10px;
+  position: relative;
+}
+
+#specks {
+  position: absolute;
+  z-index: 999;
+  height: 100vh;
+  width: 100vw;
+}
+
+.speck {
+  opacity: 0;
+  height: 4px;
+  width: 4px;
+  background: url('http://i1272.photobucket.com/albums/y391/matthew_williams10/speck_zpsu9xym9zl.png');
+  background-size: cover;
+  position: absolute;
+  border-radius: 10px;
+  z-index: 99;
+}
+
+.img {
+  position: absolute;
+  height: 100000px;
+  width: 100000px;
+  top: -8500px;
+  left: -8000px;
+  animation-timing-function: cubic-bezier(0.250, 0.250, 0.750, 0.750);
+  animation-name: float;
+  animation-iteration-count: infinite;
+}
+
+#img-1 {
+  opacity: 0.25;
+  background: url('https://image.ibb.co/jcTvpv/dust1.jpg');
+  background-repeat: repeat;
+  animation-duration: 600s;
+}
+
+#img-2 {
+  opacity: 0.2;
+  background: url('https://image.ibb.co/goU1Uv/dust2.jpg');
+  background-repeat: repeat;
+  animation-duration: 450s;
+}
+
+#img-3 {
+  opacity: 0.15;
+  background: url('https://image.ibb.co/cymRwa/dust3.jpg');
+  background-repeat: repeat;
+  animation-duration: 350s;
+}
+/*ANIMATIONS*/
+
+@keyframes twinkle {
+  0% {
+    transform: translate(0px, 0px);
+  }
+  30% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.75;
+  }
+  70% {
+    opacity: 0;
+  }
+  100% {
+    transform: translate(175px, 100px);
+  }
+}
+
+@keyframes float {
+  0% {
+    transform: translate(0px, 0px);
+  }
+  100% {
+      transform:translate(8000px, 4000px);
+  }
+}
+
+
+/*animation 235-373*/
+.bigcircle {
+    margin-top:10px;
+    width: 130px;
+    height: 130px;
+    padding: 30px;
+    /*background-color: #EAEAEA;*/
+    background-image: url("C:/Users/Nishit/Desktop/sample/images/moon.png");
+    background-position: center;
+    border-radius: 50%;
+    box-shadow: 1.5px 1px 15px #000;
+    margin:auto;
+    margin-top:-5%;
+    text-align: center;
+}
+.small-circle {
+    width: 70px;
+    height: 70px;
+    /*background-color: #c1965d;*/
+    background-image: url("C:/Users/Nishit/Desktop/sample/images/stars1.png");
+    background-position: center;
+    border-radius: 50px;
+    animation-name: marire;
+    animation-duration: 2s;
+    animation-iteration-count: infinite; 
+    margin:auto;
+}
+
+i {
+    border: solid #c1965d;
+    border-width: 0 10px 10px 0;
+    display:inline-block;
+    padding:5px;
+    width:20px;
+    height:20px;
+    animation-name: sageata;
+    animation-duration:2s;
+    animation-iteration-count: infinite;
+}
+
+.down-arrow {
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+}
+@keyframes marire {
+    5% {
+        margin-top:.2em;
+        border-radius:45px;
+        width:80px;
+    }
+    15% {
+        margin-top:.4em;
+        border-radius:40px;
+        width:70px;
+    }
+    25% {
+        margin-top:.6em;
+        border-radius:30px;
+        width: 58px;
+    }
+    30% {
+        margin-top:.8em;
+        border-radius:20px;
+        width:50px;
+    }
+    35% {
+        margin-top:1.6em;
+        border-radius: 10px;
+        width: 30px;
+    }
+    40% {
+        margin-top:1.8em;
+        border-radius: 10px;
+        width: 40px;
+    }
+    45% {
+        margin-top:1.6em;
+        border-radius: 10px;
+        width: 25px;
+    }
+    50% {
+        margin-top:1.8em;
+        border-radius: 10px;
+        width: 30px;
+    }
+    55% {
+        margin-top:1.6em;
+        border-radius: 10px;
+        width: 40px;
+    }
+    65% {
+        margin-top:.8em;
+        border-radius:20px;
+        width: 50px;
+    }
+    75% {
+        margin-top:.6em;
+        border-radius: 30px;
+        width: 58px;
+    }
+
+    85% {
+        margin-top: .4em;
+        border-radius:40px;
+        width: 70px;
+    }
+    85% {
+        margin-top: .2em;
+        border-radius:45px;
+        width:80px;
+    }
+    100% {
+        margin-top:0;
+        border-radius: 50px;
+        width:70px;
+    }
+
+}
+
+@keyframes sageata {
+0% {
+    opacity: 0;
+}
+25% { 
+    opacity: 0.5;
+}
+50% {
+    opacity:1;
+}
+75% {
+    opacity:0.5;
+}
+100% {
+    opacity: 0;
+}
+}
+
+.btn {
+    width:150px;
+    height: 20px;
+    background-color:#EAEAEA;
+    margin:25px auto;
+    text-align: center;
+    font-family: 'Helvetica Neue';
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size:18px;
+    color:#000000;
+    padding-top:15px;
+    padding-bottom:15px;
+    border-radius: 20px;
+    box-shadow: 1px 1px 3px #000000;
+    cursor:pointer;
+}
+/*animation ends here*/
+  .center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 30%;
+}
+  /* Sections */
+
+/*section { padding: 8em 0 0 14em; }*/
+
+
+
+/* End sections */
+  li{
+    margin: 15px 0;
+  }
+  /*  
+  Side Navigation Menu
+  ===================
+  License:
+  https://goo.gl/KC3XXj
+  ===================
+  Author: @PableraShow
+
+ */
+
+
+
+/* Typography
+------------------------------------- */
+@charset "UTF-8";
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,700);
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+  line-height: 1.8em;
+  color:#4D4D4D;
+}
+
+/* Navigation */
+
+a {
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #151515;
+  
+  transition-delay: 0s;
+  transition-duration: 0.36s;
+  transition-property: all;
+  transition-timing-function: ease;
+}
+
+nav a:hover { font-weight: 400; }
+
+nav,
+/*nav:hover { padding: 1em; }*/
+nav:hover { padding: 1em; }
+
+nav a { text-indent: -200px; }
+
+nav:hover a {
+  text-indent:0px;
+  color: #EEFFE5;
+}
+
+svg,
+a { vertical-align: top; }
+
+/* End Navigation */
+
+
+/* Sections */
+
+h1 {
+  font-family: 'Open Sans', sans-serif;
+  font-size:3em; 
+  font-weight: 300;
+  color:#e2dfbc;
+  line-height: 1.8em;
+}
+
+h2 { font-weight: 300; }
+
+h2 a { font-weight: 700; }
+
+/* End Sections */  
+
+
+/* Structure
+------------------------------------- */
+/*body { background: #f1f1f1; }*/
+
+/* Navigation */
+
+nav {
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  display: block;
+  height: auto;
+  min-width: 80px;
+  width: 40px;
+  /*background-color: #ccc;*/
+  
+  transition-delay: 0s;
+  transition-duration: 0.4s;
+  transition-property: all;
+  transition-timing-function: line;
+}
+
+nav:hover {
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  height: auto;
+  width: 300px;
+  /*background-color: #081556;*/
+
+  background: linear-gradient(360deg, #000000  25%, #070f60 100%);
+  fixed;
+  overflow: hidden;
+}
+
+nav a {
+  -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: alpha(opacity=0);
+  opacity:0;
+  margin-left: 1em;
+}
+
+nav:hover a {
+  -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+  filter: alpha(opacity=100);
+  opacity:1;
+}
+
+li {
+  display: block;
+  padding:0.2em;
+  height:32px;
+}
+
+svg,
+a { display: inline-block; }
+
+/* End Navigation */
+</style>
+
+
+<script>
+ 
+//alert msg to start voice recognition
+function myFunction() {
+alert("I am an alert box!");
+}
+
+
+
+  //SLIDER
+ var speed = 400;
+
+$(document).ready(function(){
+  var imgCount = $('.img').length
+  $("#slider").on("change", function() {
+    for (var i = 1; i <= imgCount; i++) {
+      speed = 201 - this.value;
+      $('#range').text(`1000px / ${speed/10}s`)
+      speed = speed * (i / 1.25)
+      $('#img-' + i).css({
+        'animation-duration': speed + 's',
+        'animation-name': 'float'
+      });
+    }
+  });
+});
+                  
+var parallax = $('#scene').parallax();
+
+for (var i = 1; i < 6; i++) {
+  twinkleLoop(i);
+};
+
+function twinkleLoop(i) {
+  var duration = ((Math.random() * 5) + 3)
+
+  duration = duration - ((495 - speed)/100)
+  twinkle(i, duration)
+
+  setTimeout(function() {
+    twinkleLoop(i)
+  }, duration * 1000);
+}
+
+function twinkle(id, duration) {
+  var top = (Math.floor(Math.random() * 85) + 0) + '%';
+  var left = (Math.floor(Math.random() * 85) + 0) + '%';
+
+  $('#speck' + id).remove();
+  $('#specks').append("<div class='speck' id='speck" + id + "'></div>")
+  $('#speck' + id).css({
+    'top': top,
+    'left': left,
+    'animation-duration': duration + 's',
+    'animation-timing-function': 'cubic-bezier(0.250, 0.250, 0.750, 0.750)',
+    'animation-name': 'twinkle',
+  })
+}
+
+function myFunction1() {
+  document.getElementById("demo").innerHTML = "Paragraph changed.";
+}
+</script>
+<!-- <div class="slider-box">
+  <input id="slider" type="range" min="1" max="199" step="1"/>
+  <div id="range">1000px / 10.0s</div>
+</div> -->
+
+    
+<!-- <body background="C:\Users\Nishit\Desktop\sample\images\sky.jpeg"> -->
+<body background="https://wallpapercave.com/wp/Kj5cd8B.jpg">
+<ul id="scene" data-friction-x="0.03"
+  data-friction-y="0.05">
+  <li class="layer" id="specks" data-depth="0.1"></li>
+  <li class="layer" id="layer-1" data-depth="0.15">
+    <div class="img" id="img-1"></div>
+  </li>
+  <li class="layer" id="layer-2" data-depth="0.25">
+    <div class="img" id="img-2"></div>
+  </li>
+  <li class="layer" id="layer-3" data-depth="0.45">
+    <div class="img" id="img-3"></div>
+  </li>
+</ul>
+  <div class="bigcircle">
+          <div class="small-circle"></div>
+          <i class="down-arrow"></i>
+      </div>
+      <div class="btn"><button type="submit" onclick="myFunction()">click here!</button></div>
+      <h1>RP-Alpha Automation</h1> 
+
+
+
+
+
+<p id="demo">A Paragraph</p>
+<button type="button" onclick="myFunction1()">Try it</button>
+    <!-- <p class="center">
+
+  <button type="submit" onclick="myFunction()" style="background-color:transparent; border-color:transparent;"> 
+  <img src="C:\Users\Nishit\Desktop\sample\images\moon.png" height="255"/>
+  </button>
+</p> -->
+</body>
+
+
+
+
+<!-- menu -->
+
+
+<!-- <nav>
+  <ul>
+    <li><img src="C:\Users\Nishit\Desktop\sample\images\website.png" alt="Home" height="40px" width="40px"><a href="https://www.google.com/">Home</a></li>
+    <li><img src="C:\Users\Nishit\Desktop\sample\images\about.png" alt="About" height="40px" width="40px"><a href="#">About</a></li>
+    <li><img src="C:\Users\Nishit\Desktop\sample\images\work.png" alt="Work" height="40px" width="40px"><a href="#">Work</a></li>
+    <li><img src="C:\Users\Nishit\Desktop\sample\images\contact.png" alt="Contact" height="40px" width="40px"><a href="#">Contact</a></li>
+  </ul>
+</nav> -->
+<nav class="navbar bg-primary navbar-dark navbar-expand-md fixed-top">
+  <ul>
+    <li style="padding-right:1em"><img src="C:\Users\Nishit\Desktop\sample\images\website.png" alt="Home" height="40px" width="40px"><a class="nav-link" href="https://www.google.com/">Home</a></li>
+    <li style="padding-right:1em"><img src="C:\Users\Nishit\Desktop\sample\images\about.png" alt="About" height="40px" width="40px"><a href="#">About</a></li>
+    <li style="padding-right:1em"><img src="C:\Users\Nishit\Desktop\sample\images\work.png" alt="Work" height="40px" width="40px"><a href="#">Work</a></li>
+    <li style="padding-right:1em"><img src="C:\Users\Nishit\Desktop\sample\images\contact.png" alt="Contact" height="40px" width="40px"><a href="#">Contact</a></li>
+  </ul>
+</nav>
+
+
+
+<!-- <section>  
+  <h1>RP-alpha Automation tool</h1>
+  
+</section> -->
+ 
+
+<!-- 
+<content>
+  <div class="blueprint">
+    <div class="bar">
+      <div class="dot1"></div>
+      <div class="dot2"></div>
+    </div>
+    <div class="bar">
+      <div class="dot1"></div>
+      <div class="dot2"></div>
+    </div>
+    <div class="bar">
+      <div class="dot1"></div>
+      <div class="dot2"></div>
+    </div>
+    <div class="bar">
+      <div class="dot1"></div>
+      <div class="dot2"></div>
+    </div>
+    <div class="bar">
+      <div class="dot1"></div>
+      <div class="dot2"></div>
+    </div>
+    <div class="bar">
+      <div class="dot1"></div>
+      <div class="dot2"></div>
+    </div>
+    <div class="bar">
+      <div class="dot1"></div>
+      <div class="dot2"></div>
+    </div>
+    <div class="bar">
+      <div class="dot1"></div>
+      <div class="dot2"></div>
+    </div>
+    <div class="bar">
+      <div class="dot1"></div>
+      <div class="dot2"></div>
+    </div>
+
+  </div>
+</content>
+
+<style>
+  /*! Styling */
+*,
+::after,
+::before {
+  box-sizing: inherit;
+}
+
+html {
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(to top, #232323, #151515)
+}
+
+content {
+  position: absolute;
+  top: 80%;
+  left: 60%;
+  transform: translate(-50%, -50%);
+}
+
+.blueprint {
+  min-width: 470px;
+  height: 30px;
+  position: relative;
+}
+
+.blueprint * {
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+}
+
+.blueprint .dot1 {
+  content: '';
+  position: absolute;
+  width: 100%;
+  top: -25%;
+  left: 0;
+  height: 150%;
+  z-index: 3;
+  background: linear-gradient(to right, #fff, transparent 25%, transparent 75%, #fff);
+  -webkit-transform: translateZ(100px);
+  transform: translateZ(100px);
+}
+
+.blueprint .bar {
+  width: 2px;
+  height: 100%;
+  position: absolute;
+  background: #fff;
+  background-size: 10px 20px;
+  top: 0;
+  -webkit-transform: rotateX(0);
+  transform: rotateX(0);
+  -webkit-animation: grow 5s linear infinite;
+  animation: grow 5s linear infinite;
+  will-change: transform;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+}
+
+.blueprint .bar:nth-of-type(1) .dot1,
+.blueprint .bar:nth-of-type(1) .dot2 {
+  width: calc(3px + 5px);
+  height: calc(3px + 5px);
+}
+
+.blueprint .bar:nth-of-type(2) .dot1,
+.blueprint .bar:nth-of-type(2) .dot2 {
+  width: calc(4px + 6px);
+  height: calc(4px + 6px);
+}
+
+.blueprint .bar:nth-of-type(3) .dot1,
+.blueprint .bar:nth-of-type(3) .dot2 {
+  width: calc(5px + 7px);
+  height: calc(5px + 7px);
+}
+
+.blueprint .bar:nth-of-type(4) .dot1,
+.blueprint .bar:nth-of-type(4) .dot2 {
+  width: calc(6px + 8px);
+  height: calc(6px + 8px);
+}
+
+.blueprint .bar:nth-of-type(5) .dot1,
+.blueprint .bar:nth-of-type(5) .dot2 {
+  width: calc(7px + 9px);
+  height: calc(7px + 9px);
+}
+
+.blueprint .bar:nth-of-type(6) .dot1,
+.blueprint .bar:nth-of-type(6) .dot2 {
+  width: calc(6px + 8px);
+  height: calc(6px + 8px);
+}
+
+.blueprint .bar:nth-of-type(7) .dot1,
+.blueprint .bar:nth-of-type(7) .dot2 {
+  width: calc(5px + 7px);
+  height: calc(5px + 7px);
+}
+
+.blueprint .bar:nth-of-type(8) .dot1,
+.blueprint .bar:nth-of-type(8) .dot2 {
+  width: calc(4px + 6px);
+  height: calc(4px + 6px);
+}
+
+.blueprint .bar:nth-of-type(9) .dot1,
+.blueprint .bar:nth-of-type(9) .dot2 {
+  width: calc(3px + 5px);
+  height: calc(3px + 5px);
+}
+
+
+.blueprint .bar:nth-of-type(1) {
+  left: calc(-15px);
+  -webkit-animation-delay: -.4s;
+  animation-delay: -.4s;
+}
+
+.blueprint .bar:nth-of-type(1) .dot1,
+.blueprint .bar:nth-of-type(1) .dot2,
+.blueprint .bar:nth-of-type(1):after,
+.blueprint .bar:nth-of-type(1):before {
+  -webkit-animation-delay: -.4s;
+  animation-delay: -.4s;
+}
+
+.blueprint .bar:nth-of-type(2) {
+  left: calc(10px);
+  -webkit-animation-delay: -.8s;
+  animation-delay: -.8s;
+}
+
+.blueprint .bar:nth-of-type(2) .dot1,
+.blueprint .bar:nth-of-type(2) .dot2,
+.blueprint .bar:nth-of-type(2):after,
+.blueprint .bar:nth-of-type(2):before {
+  -webkit-animation-delay: -.8s;
+  animation-delay: -.8s;
+}
+
+.blueprint .bar:nth-of-type(3) {
+  left: calc(35px);
+  -webkit-animation-delay: -1.2s;
+  animation-delay: -1.2s;
+}
+
+.blueprint .bar:nth-of-type(3) .dot1,
+.blueprint .bar:nth-of-type(3) .dot2,
+.blueprint .bar:nth-of-type(3):after,
+.blueprint .bar:nth-of-type(3):before {
+  -webkit-animation-delay: -1.2s;
+  animation-delay: -1.2s;
+}
+
+.blueprint .bar:nth-of-type(4) {
+  left: calc(60px);
+  -webkit-animation-delay: -1.6s;
+  animation-delay: -1.6s;
+}
+
+.blueprint .bar:nth-of-type(4) .dot1,
+.blueprint .bar:nth-of-type(4) .dot2,
+.blueprint .bar:nth-of-type(4):after,
+.blueprint .bar:nth-of-type(4):before {
+  -webkit-animation-delay: -1.6s;
+  animation-delay: -1.6s;
+}
+
+.blueprint .bar:nth-of-type(5) {
+  left: calc(85px);
+  -webkit-animation-delay: -2s;
+  animation-delay: -2s;
+}
+
+.blueprint .bar:nth-of-type(5) .dot1,
+.blueprint .bar:nth-of-type(5) .dot2,
+.blueprint .bar:nth-of-type(5):after,
+.blueprint .bar:nth-of-type(5):before {
+  -webkit-animation-delay: -2s;
+  animation-delay: -2s;
+}
+
+.blueprint .bar:nth-of-type(6) {
+  left: calc(110px);
+  -webkit-animation-delay: -2.4s;
+  animation-delay: -2.4s;
+}
+
+.blueprint .bar:nth-of-type(6) .dot1,
+.blueprint .bar:nth-of-type(6) .dot2,
+.blueprint .bar:nth-of-type(6):after,
+.blueprint .bar:nth-of-type(6):before {
+  -webkit-animation-delay: -2.4s;
+  animation-delay: -2.4s;
+}
+
+.blueprint .bar:nth-of-type(7) {
+  left: calc(135px);
+  -webkit-animation-delay: -2.8s;
+  animation-delay: -2.8s;
+}
+
+.blueprint .bar:nth-of-type(7) .dot1,
+.blueprint .bar:nth-of-type(7) .dot2,
+.blueprint .bar:nth-of-type(7):after,
+.blueprint .bar:nth-of-type(7):before {
+  -webkit-animation-delay: -2.8s;
+  animation-delay: -2.8s;
+}
+
+.blueprint .bar:nth-of-type(8) {
+  left: calc(160px);
+  -webkit-animation-delay: -3.2s;
+  animation-delay: -3.2s;
+}
+
+.blueprint .bar:nth-of-type(8) .dot1,
+.blueprint .bar:nth-of-type(8) .dot2,
+.blueprint .bar:nth-of-type(8):after,
+.blueprint .bar:nth-of-type(8):before {
+  -webkit-animation-delay: -3.2s;
+  animation-delay: -3.2s;
+}
+
+.blueprint .bar:nth-of-type(9) {
+  left: calc(185px);
+  -webkit-animation-delay: -3.6s;
+  animation-delay: -3.6s;
+}
+
+.blueprint .bar:nth-of-type(9) .dot1,
+.blueprint .bar:nth-of-type(9) .dot2,
+.blueprint .bar:nth-of-type(9):after,
+.blueprint .bar:nth-of-type(9):before {
+  -webkit-animation-delay: -3.6s;
+  animation-delay: -3.6s;
+}
+
+.blueprint .bar .dot1,
+.blueprint .bar .dot2 {
+  content: '';
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background: #fff;
+  border-radius: 100%;
+  left: 50%;
+  top: -30px;
+  -webkit-animation: shrink 8s linear infinite;
+  animation: shrink 8s linear infinite;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -webkit-transform: translateX(-50%) rotateX(0);
+  transform: translateX(-50%) rotateX(0);
+}
+
+.blueprint .bar .dot2 {
+  top: auto;
+  bottom: -30px;
+  background: #fff;
+}
+
+.blueprint .bar:after,
+.blueprint .bar:before {
+  content: '';
+  box-shadow: 0 0 0 2px #fff;
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: #fff;
+  border-radius: 0;
+  left: 50%;
+  bottom: 0;
+  -webkit-animation: shrink2 8s linear infinite;
+  animation: shrink2 8s linear infinite;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -webkit-transform: translateX(-50%) rotateX(0) translateZ(2px);
+  transform: translateX(-50%) rotateX(0) translateZ(2px);
+}
+
+.blueprint .bar:after {
+  bottom: auto;
+  top: 0;
+}
+}
+
+/*! Keyframes */
+@-webkit-keyframes grow {
+  to {
+    -webkit-transform: rotateX(360deg);
+    transform: rotateX(360deg);
+  }
+}
+@keyframes grow {
+  to {
+    -webkit-transform: rotateX(360deg);
+    transform: rotateX(360deg);
+  }
+}
+@-webkit-keyframes shrink {
+  100% {
+    -webkit-transform: translateX(-50%) rotateX(-360deg);
+    transform: translateX(-50%) rotateX(-360deg);
+  }
+}
+@keyframes shrink {
+  100% {
+    -webkit-transform: translateX(-50%) rotateX(-360deg);
+    transform: translateX(-50%) rotateX(-360deg);
+  }
+}
+@-webkit-keyframes shrink2 {
+  100% {
+    -webkit-transform: translateX(-50%) rotateX(-360deg) translateZ(2px);
+    transform: translateX(-50%) rotateX(-360deg) translateZ(2px);
+  }
+}
+@keyframes shrink2 {
+  100% {
+    -webkit-transform: translateX(-50%) rotateX(-360deg) translateZ(2px);
+    transform: translateX(-50%) rotateX(-360deg) translateZ(2px);
+  }
+</style>
